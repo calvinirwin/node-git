@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.15.3",
+    "nodegit": "^0.18.3",
+    "simple-git": "^1.72.0"
+  }
+}
