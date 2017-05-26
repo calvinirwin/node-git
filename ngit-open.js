@@ -1,10 +1,33 @@
 var Git = require("nodegit");
 
-module.exports = function(gitSource, repoName) {
+function GitManager(gitSource, repoName) {
 
-  Git.Clone(gitSource, repoName).then(function(repository){
+  this.source = gitSource;
+  this.repoName = repoName;
+  this.repository = null;
+  //console.log('construction complete ')
+}
+
+
+GitManager.prototype.clone = function (){
+  Git.Clone(this.source, './tmp').then(function(repository){
     console.log(repository.m);
   });
+}
+
+GitManager.prototype.getLastCommitMessage = function () {
+  var repo = './tmp';
+  console.log(repo)
+  Git.Repository.open(repo)  
+    .then(function(repository) {
+      console.log('opened repo')
+         
+    //   getMostRecentCommit)
+    // .then(getCommitMessage)
+    // .then(function(message) {
+    //   console.log('getting my message')
+    //   console.log(message);
+   });
 }
 
 
@@ -17,13 +40,12 @@ var getCommitMessage = function(commit) {
   return commit.message();
 };
 
-Git.Repository.open("nodegit")
-  .then(getMostRecentCommit)
-  .then(getCommitMessage)
-  .then(function(message) {
-    console.log(message);
-  });
+module.exports = GitManager;
 
 
-module.exports.MostRecentCommit = getMostRecentCommit;
-module.exports.GetCommitMessage = getCommitMessage;
+
+
+
+
+//module.exports.MostRecentCommit = getMostRecentCommit;
+//module.exports.GetCommitMessage = getCommitMessage;
