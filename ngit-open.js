@@ -22,8 +22,7 @@ GitManager.prototype.getLastCommitMessage = function () {
     .then(function(repository) {
       return repository.getBranchCommit("master");
 
-      // console.log(repository.getStatus());
-      // console.log('opened repo')
+      // using promises
     }).then(function(commit) {
       return commit.message();
     }).then(function(message) {
