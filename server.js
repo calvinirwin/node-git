@@ -5,11 +5,13 @@
 var ngit = require("./ngit-open");
 
 var gm = new ngit("https://github.com/nodegit/nodegit", "nodegit");
-//gm.clone();
-gm.getLastCommitMessage();
+
+// gm.getRepoPath();
+// gm.clone();
+// gm.getLastCommitMessage();
+gm.getAllBranches();
 
 // use nodegit
-//console.log(nGit.GetMostRecentCommit);
-//
+
 
 //use simple-git
