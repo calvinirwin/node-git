@@ -40,6 +40,8 @@ GitManager.prototype.getLastCommitMessage = function () {
 }
 
 
+
+
 // in order to get this to work properly we will need to fetch all first
 GitManager.prototype.getAllBranches = function () {
   // var repo = './tmp';
@@ -62,7 +64,18 @@ GitManager.prototype.getAllBranches = function () {
 }
 
 
+// GitManager.prototype.fetchAllChanges = function () {
 
+//   console.log('fetchAllChanges...');
+//   Git.Repository.open(this.repoPath)  
+//     .then(function(repository) {
+//       console.log('...have repo now');
+//       return repository.fetchAll({});
+//     })
+//     .then(function() {
+//       console.log('...fetched');
+//     });
+// }
 
 
 module.exports = GitManager;

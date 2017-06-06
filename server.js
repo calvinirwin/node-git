@@ -10,7 +10,7 @@ var gm = new ngit("https://github.com/nodegit/nodegit", "nodegit");
 // gm.clone();
 // gm.getLastCommitMessage();
 gm.getAllBranches();
-
+// gm.fetchAllChanges();
 // use nodegit
 
 
