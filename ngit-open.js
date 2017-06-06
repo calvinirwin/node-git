@@ -64,18 +64,18 @@ GitManager.prototype.getAllBranches = function () {
 }
 
 
-// GitManager.prototype.fetchAllChanges = function () {
+GitManager.prototype.fetchAllChanges = function () {
 
-//   console.log('fetchAllChanges...');
-//   Git.Repository.open(this.repoPath)  
-//     .then(function(repository) {
-//       console.log('...have repo now');
-//       return repository.fetchAll({});
-//     })
-//     .then(function() {
-//       console.log('...fetched');
-//     });
-// }
+  console.log('fetchAllChanges...');
+  Git.Repository.open(this.repoPath)  
+    .then(function(repository) {
+      console.log('...have repo now');
+      return repository.fetchAll({});
+    })
+    .then(function() {
+      console.log('...fetched');
+    });
+}
 
 
 module.exports = GitManager;
